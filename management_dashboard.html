@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4273e73715a4edc4707e8af5c19d966a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_4273e73715a4edc4707e8af5c19d966a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4273e73715a4edc4707e8af5c19d966a = L.map(
+                "map_4273e73715a4edc4707e8af5c19d966a",
+                {
+                    center: [10.7769, 106.7009],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 15,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_4273e73715a4edc4707e8af5c19d966a);
+
+            
+
+        
+    
+            var tile_layer_b47b5e88b9cf89ca25f6fafc41667440 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b47b5e88b9cf89ca25f6fafc41667440.addTo(map_4273e73715a4edc4707e8af5c19d966a);
+        
+    
+            var feature_group_60ca2af10cda4053f3ebeda1a21e806e = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_a071244661076e695b78a3a81d3e6ade = L.marker(
+                [10.778, 106.702],
+                {
+}
+            ).addTo(feature_group_60ca2af10cda4053f3ebeda1a21e806e);
+        
+    
+            var icon_7854915592da6b26bd1d2c74beba213c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bca6ad757c4f0da1ce5efbe3265ea1c6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_99cee2dfc357edbf221f22f07044f137 = $(`<div id="html_99cee2dfc357edbf221f22f07044f137" style="width: 100.0%; height: 100.0%;"><b>Cửa hàng:</b> Vincom Center<br><b>Trạng thái:</b> Đang hoạt động</div>`)[0];
+                popup_bca6ad757c4f0da1ce5efbe3265ea1c6.setContent(html_99cee2dfc357edbf221f22f07044f137);
+            
+        
+
+        marker_a071244661076e695b78a3a81d3e6ade.bindPopup(popup_bca6ad757c4f0da1ce5efbe3265ea1c6)
+        ;
+
+        
+    
+    
+                marker_a071244661076e695b78a3a81d3e6ade.setIcon(icon_7854915592da6b26bd1d2c74beba213c);
+            
+    
+            var marker_f7f7d611feb587a7164c164190673925 = L.marker(
+                [10.7815, 106.6985],
+                {
+}
+            ).addTo(feature_group_60ca2af10cda4053f3ebeda1a21e806e);
+        
+    
+            var icon_1e207e10acfff32da6c767d757353e02 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_acc40d21cb4bb372095931d0661d7f1a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d3b5da74ff10136bcacf665cf4019883 = $(`<div id="html_d3b5da74ff10136bcacf665cf4019883" style="width: 100.0%; height: 100.0%;"><b>Cửa hàng:</b> Diamond Plaza<br><b>Trạng thái:</b> Đang hoạt động</div>`)[0];
+                popup_acc40d21cb4bb372095931d0661d7f1a.setContent(html_d3b5da74ff10136bcacf665cf4019883);
+            
+        
+
+        marker_f7f7d611feb587a7164c164190673925.bindPopup(popup_acc40d21cb4bb372095931d0661d7f1a)
+        ;
+
+        
+    
+    
+                marker_f7f7d611feb587a7164c164190673925.setIcon(icon_1e207e10acfff32da6c767d757353e02);
+            
+    
+            var marker_005527714fd5001e3f0c718c5182a524 = L.marker(
+                [10.7735, 106.7015],
+                {
+}
+            ).addTo(feature_group_60ca2af10cda4053f3ebeda1a21e806e);
+        
+    
+            var icon_47cb62859564f75b368470eb499ea924 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-cart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_93ea8e68766ca9e24f8556aeb6d1bddc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5dc9e359496254daaf308444fd48210d = $(`<div id="html_5dc9e359496254daaf308444fd48210d" style="width: 100.0%; height: 100.0%;"><b>Cửa hàng:</b> Takashimaya<br><b>Trạng thái:</b> Đang hoạt động</div>`)[0];
+                popup_93ea8e68766ca9e24f8556aeb6d1bddc.setContent(html_5dc9e359496254daaf308444fd48210d);
+            
+        
+
+        marker_005527714fd5001e3f0c718c5182a524.bindPopup(popup_93ea8e68766ca9e24f8556aeb6d1bddc)
+        ;
+
+        
+    
+    
+                marker_005527714fd5001e3f0c718c5182a524.setIcon(icon_47cb62859564f75b368470eb499ea924);
+            
+    
+            feature_group_60ca2af10cda4053f3ebeda1a21e806e.addTo(map_4273e73715a4edc4707e8af5c19d966a);
+        
+    
+            var feature_group_aac7f1d55d08d58ae0f3dd2874b97768 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_0e31273f2417a1db6b90c1db20136c51 = L.circle(
+                [10.778, 106.702],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 500, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aac7f1d55d08d58ae0f3dd2874b97768);
+        
+    
+        var popup_22dad19b2f572a5dce286d48612a7400 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_087756e64a17d4578f2025dc4cd1198e = $(`<div id="html_087756e64a17d4578f2025dc4cd1198e" style="width: 100.0%; height: 100.0%;">Vùng ảnh hưởng 500m</div>`)[0];
+                popup_22dad19b2f572a5dce286d48612a7400.setContent(html_087756e64a17d4578f2025dc4cd1198e);
+            
+        
+
+        circle_0e31273f2417a1db6b90c1db20136c51.bindPopup(popup_22dad19b2f572a5dce286d48612a7400)
+        ;
+
+        
+    
+    
+            var circle_0008ece0cafb3f34b4458916ce52f3f3 = L.circle(
+                [10.7815, 106.6985],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 500, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aac7f1d55d08d58ae0f3dd2874b97768);
+        
+    
+        var popup_1333ca5b231d8537e4f1522fdc973d09 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_77e8e3d125002e76e803ca545f267761 = $(`<div id="html_77e8e3d125002e76e803ca545f267761" style="width: 100.0%; height: 100.0%;">Vùng ảnh hưởng 500m</div>`)[0];
+                popup_1333ca5b231d8537e4f1522fdc973d09.setContent(html_77e8e3d125002e76e803ca545f267761);
+            
+        
+
+        circle_0008ece0cafb3f34b4458916ce52f3f3.bindPopup(popup_1333ca5b231d8537e4f1522fdc973d09)
+        ;
+
+        
+    
+    
+            var circle_cd2abf94750c4b4dc10f38d00d65a11a = L.circle(
+                [10.7735, 106.7015],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 500, "stroke": true, "weight": 3}
+            ).addTo(feature_group_aac7f1d55d08d58ae0f3dd2874b97768);
+        
+    
+        var popup_e8dd1ad0f0e3ffae1c394963c523e033 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e0c2585c9335d0c3de69fa855dbd5259 = $(`<div id="html_e0c2585c9335d0c3de69fa855dbd5259" style="width: 100.0%; height: 100.0%;">Vùng ảnh hưởng 500m</div>`)[0];
+                popup_e8dd1ad0f0e3ffae1c394963c523e033.setContent(html_e0c2585c9335d0c3de69fa855dbd5259);
+            
+        
+
+        circle_cd2abf94750c4b4dc10f38d00d65a11a.bindPopup(popup_e8dd1ad0f0e3ffae1c394963c523e033)
+        ;
+
+        
+    
+    
+            var feature_group_db803cb88268bf5ce2283d0ecd517cc9 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_5292312654afdf8c95b88cbbaf93d99c = L.polyline(
+                [[10.7815, 106.6985], [10.778, 106.702], [10.7735, 106.7015]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(feature_group_db803cb88268bf5ce2283d0ecd517cc9);
+        
+    
+        var popup_b027c1e374da71d8c067d865032b4b29 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bb7b08ce668f9108242e290861b4b99f = $(`<div id="html_bb7b08ce668f9108242e290861b4b99f" style="width: 100.0%; height: 100.0%;">Tuyến vận chuyển nội bộ</div>`)[0];
+                popup_b027c1e374da71d8c067d865032b4b29.setContent(html_bb7b08ce668f9108242e290861b4b99f);
+            
+        
+
+        poly_line_5292312654afdf8c95b88cbbaf93d99c.bindPopup(popup_b027c1e374da71d8c067d865032b4b29)
+        ;
+
+        
+    
+    
+            feature_group_db803cb88268bf5ce2283d0ecd517cc9.addTo(map_4273e73715a4edc4707e8af5c19d966a);
+        
+    
+            var layer_control_bca37e04654bc37345a3014895d9979c_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_b47b5e88b9cf89ca25f6fafc41667440,
+                },
+                overlays :  {
+                    "C\u1eeda h\u00e0ng b\u00e1n l\u1ebb (\u0110i\u1ec3m)" : feature_group_60ca2af10cda4053f3ebeda1a21e806e,
+                    "V\u00f9ng ph\u1ee7 s\u00f3ng (V\u00f9ng)" : feature_group_aac7f1d55d08d58ae0f3dd2874b97768,
+                    "Tuy\u1ebfn v\u1eadn t\u1ea3i (Tuy\u1ebfn)" : feature_group_db803cb88268bf5ce2283d0ecd517cc9,
+                },
+            };
+            let layer_control_bca37e04654bc37345a3014895d9979c = L.control.layers(
+                layer_control_bca37e04654bc37345a3014895d9979c_layers.base_layers,
+                layer_control_bca37e04654bc37345a3014895d9979c_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_4273e73715a4edc4707e8af5c19d966a);
+
+        
+    
+            var feature_group_60ca2af10cda4053f3ebeda1a21e806esearchControl = new L.Control.Search({
+                layer: feature_group_60ca2af10cda4053f3ebeda1a21e806e,
+                
+                propertyName: 'popup',
+                
+                collapsed: true,
+                textPlaceholder: 'Tìm kiếm cửa hàng...',
+                position:'topleft',
+            
+                initial: false,
+                
+                hideMarkerOnCollapse: true
+            
+                });
+                feature_group_60ca2af10cda4053f3ebeda1a21e806esearchControl.on('search:locationfound', function(e) {
+                    feature_group_60ca2af10cda4053f3ebeda1a21e806e.setStyle(function(feature){
+                        return feature.properties.style
+                    })
+                    
+                    if(e.layer._popup)
+                        e.layer.openPopup();
+                })
+                feature_group_60ca2af10cda4053f3ebeda1a21e806esearchControl.on('search:collapsed', function(e) {
+                        feature_group_60ca2af10cda4053f3ebeda1a21e806e.setStyle(function(feature){
+                            return feature.properties.style
+                    });
+                });
+            map_4273e73715a4edc4707e8af5c19d966a.addControl( feature_group_60ca2af10cda4053f3ebeda1a21e806esearchControl );
+
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topleft",
+  "title": "Full Screen",
+  "titleCancel": "Exit Full Screen",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_4273e73715a4edc4707e8af5c19d966a);
+        
+</script>
+</html>
