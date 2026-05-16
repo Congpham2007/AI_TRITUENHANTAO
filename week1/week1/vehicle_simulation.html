@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e090c0fc365ab6f3397a90bc8901ebb8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.control.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_e090c0fc365ab6f3397a90bc8901ebb8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e090c0fc365ab6f3397a90bc8901ebb8 = L.map(
+                "map_e090c0fc365ab6f3397a90bc8901ebb8",
+                {
+                    center: [10.8015, 106.6508],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f05906299b2bf57729699af8a87c4fc5 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f05906299b2bf57729699af8a87c4fc5.addTo(map_e090c0fc365ab6f3397a90bc8901ebb8);
+        
+    
+            L.Control.TimeDimensionCustom = L.Control.TimeDimension.extend({
+                _getDisplayDateFormat: function(date){
+                    var newdate = new moment(date);
+                    console.log(newdate)
+                    return newdate.format("YYYY-MM-DD HH:mm:ss");
+                }
+            });
+            map_e090c0fc365ab6f3397a90bc8901ebb8.timeDimension = L.timeDimension(
+                {
+                    period: "PT30S",
+                }
+            );
+            var timeDimensionControl = new L.Control.TimeDimensionCustom(
+                {
+  "position": "bottomleft",
+  "minSpeed": 0.1,
+  "maxSpeed": 1,
+  "autoPlay": false,
+  "loopButton": true,
+  "timeSliderDragUpdate": true,
+  "speedSlider": true,
+  "playerOptions": {
+  "transitionTime": 200,
+  "loop": false,
+  "startOver": true,
+},
+}
+            );
+            map_e090c0fc365ab6f3397a90bc8901ebb8.addControl(this.timeDimensionControl);
+
+            var geoJsonLayer = L.geoJson({"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6632373, 10.8152184]}, "properties": {"time": "2026-04-24T10:00:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 0<br>Th\u1eddi gian: 2026-04-24T10:00:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6631322, 10.8151044]}, "properties": {"time": "2026-04-24T10:00:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 1<br>Th\u1eddi gian: 2026-04-24T10:00:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6630527, 10.8149928]}, "properties": {"time": "2026-04-24T10:01:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 2<br>Th\u1eddi gian: 2026-04-24T10:01:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6639915, 10.8143539]}, "properties": {"time": "2026-04-24T10:01:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 3<br>Th\u1eddi gian: 2026-04-24T10:01:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6646511, 10.8139212]}, "properties": {"time": "2026-04-24T10:02:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 4<br>Th\u1eddi gian: 2026-04-24T10:02:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6650064, 10.8130444]}, "properties": {"time": "2026-04-24T10:02:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 5<br>Th\u1eddi gian: 2026-04-24T10:02:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6649822, 10.8128552]}, "properties": {"time": "2026-04-24T10:03:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 6<br>Th\u1eddi gian: 2026-04-24T10:03:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6649379, 10.8124595]}, "properties": {"time": "2026-04-24T10:03:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 7<br>Th\u1eddi gian: 2026-04-24T10:03:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6649261, 10.812288]}, "properties": {"time": "2026-04-24T10:04:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 8<br>Th\u1eddi gian: 2026-04-24T10:04:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6649078, 10.8120202]}, "properties": {"time": "2026-04-24T10:04:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 9<br>Th\u1eddi gian: 2026-04-24T10:04:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6648781, 10.8115858]}, "properties": {"time": "2026-04-24T10:05:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 10<br>Th\u1eddi gian: 2026-04-24T10:05:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6645365, 10.8077552]}, "properties": {"time": "2026-04-24T10:05:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 11<br>Th\u1eddi gian: 2026-04-24T10:05:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6644903, 10.8073324]}, "properties": {"time": "2026-04-24T10:06:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 12<br>Th\u1eddi gian: 2026-04-24T10:06:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6644313, 10.8066514]}, "properties": {"time": "2026-04-24T10:06:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 13<br>Th\u1eddi gian: 2026-04-24T10:06:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6643717, 10.8059046]}, "properties": {"time": "2026-04-24T10:07:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 14<br>Th\u1eddi gian: 2026-04-24T10:07:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6642959, 10.8047988]}, "properties": {"time": "2026-04-24T10:07:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 15<br>Th\u1eddi gian: 2026-04-24T10:07:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6642764, 10.8045685]}, "properties": {"time": "2026-04-24T10:08:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 16<br>Th\u1eddi gian: 2026-04-24T10:08:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6641762, 10.8041459]}, "properties": {"time": "2026-04-24T10:08:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 17<br>Th\u1eddi gian: 2026-04-24T10:08:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6636114, 10.802715]}, "properties": {"time": "2026-04-24T10:09:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 18<br>Th\u1eddi gian: 2026-04-24T10:09:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6635114, 10.8025371]}, "properties": {"time": "2026-04-24T10:09:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 19<br>Th\u1eddi gian: 2026-04-24T10:09:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.662181, 10.8011717]}, "properties": {"time": "2026-04-24T10:10:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 20<br>Th\u1eddi gian: 2026-04-24T10:10:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6616907, 10.8008153]}, "properties": {"time": "2026-04-24T10:10:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 21<br>Th\u1eddi gian: 2026-04-24T10:10:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6611353, 10.8006063]}, "properties": {"time": "2026-04-24T10:11:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 22<br>Th\u1eddi gian: 2026-04-24T10:11:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6610366, 10.8006172]}, "properties": {"time": "2026-04-24T10:11:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 23<br>Th\u1eddi gian: 2026-04-24T10:11:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6608314, 10.8004218]}, "properties": {"time": "2026-04-24T10:12:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 24<br>Th\u1eddi gian: 2026-04-24T10:12:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6608786, 10.8002588]}, "properties": {"time": "2026-04-24T10:12:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 25<br>Th\u1eddi gian: 2026-04-24T10:12:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6606224, 10.8000091]}, "properties": {"time": "2026-04-24T10:13:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 26<br>Th\u1eddi gian: 2026-04-24T10:13:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6605181, 10.7999075]}, "properties": {"time": "2026-04-24T10:13:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 27<br>Th\u1eddi gian: 2026-04-24T10:13:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6599018, 10.7993894]}, "properties": {"time": "2026-04-24T10:14:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 28<br>Th\u1eddi gian: 2026-04-24T10:14:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6594778, 10.7989932]}, "properties": {"time": "2026-04-24T10:14:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 29<br>Th\u1eddi gian: 2026-04-24T10:14:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.658565, 10.7981055]}, "properties": {"time": "2026-04-24T10:15:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 30<br>Th\u1eddi gian: 2026-04-24T10:15:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6584002, 10.7979359]}, "properties": {"time": "2026-04-24T10:15:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 31<br>Th\u1eddi gian: 2026-04-24T10:15:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6583521, 10.7978864]}, "properties": {"time": "2026-04-24T10:16:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 32<br>Th\u1eddi gian: 2026-04-24T10:16:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6582552, 10.7977866]}, "properties": {"time": "2026-04-24T10:16:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 33<br>Th\u1eddi gian: 2026-04-24T10:16:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6575911, 10.7971482]}, "properties": {"time": "2026-04-24T10:17:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 34<br>Th\u1eddi gian: 2026-04-24T10:17:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6572197, 10.7967938]}, "properties": {"time": "2026-04-24T10:17:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 35<br>Th\u1eddi gian: 2026-04-24T10:17:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6565026, 10.7961093]}, "properties": {"time": "2026-04-24T10:18:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 36<br>Th\u1eddi gian: 2026-04-24T10:18:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6563743, 10.7959869]}, "properties": {"time": "2026-04-24T10:18:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 37<br>Th\u1eddi gian: 2026-04-24T10:18:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.656421, 10.795938]}, "properties": {"time": "2026-04-24T10:19:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 38<br>Th\u1eddi gian: 2026-04-24T10:19:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6568328, 10.7954913]}, "properties": {"time": "2026-04-24T10:19:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 39<br>Th\u1eddi gian: 2026-04-24T10:19:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6565922, 10.7952504]}, "properties": {"time": "2026-04-24T10:20:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 40<br>Th\u1eddi gian: 2026-04-24T10:20:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6564426, 10.7951025]}, "properties": {"time": "2026-04-24T10:20:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 41<br>Th\u1eddi gian: 2026-04-24T10:20:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6559211, 10.7938731]}, "properties": {"time": "2026-04-24T10:21:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 42<br>Th\u1eddi gian: 2026-04-24T10:21:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6557858, 10.7936082]}, "properties": {"time": "2026-04-24T10:21:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 43<br>Th\u1eddi gian: 2026-04-24T10:21:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6557438, 10.7933813]}, "properties": {"time": "2026-04-24T10:22:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 44<br>Th\u1eddi gian: 2026-04-24T10:22:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.655643, 10.7932022]}, "properties": {"time": "2026-04-24T10:22:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 45<br>Th\u1eddi gian: 2026-04-24T10:22:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6553881, 10.7927188]}, "properties": {"time": "2026-04-24T10:23:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 46<br>Th\u1eddi gian: 2026-04-24T10:23:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6557475, 10.7924989]}, "properties": {"time": "2026-04-24T10:23:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 47<br>Th\u1eddi gian: 2026-04-24T10:23:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6556387, 10.792289]}, "properties": {"time": "2026-04-24T10:24:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 48<br>Th\u1eddi gian: 2026-04-24T10:24:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6553787, 10.7918055]}, "properties": {"time": "2026-04-24T10:24:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 49<br>Th\u1eddi gian: 2026-04-24T10:24:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6539089, 10.7926036]}, "properties": {"time": "2026-04-24T10:25:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 50<br>Th\u1eddi gian: 2026-04-24T10:25:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6537942, 10.7926968]}, "properties": {"time": "2026-04-24T10:25:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 51<br>Th\u1eddi gian: 2026-04-24T10:25:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6534492, 10.7928846]}, "properties": {"time": "2026-04-24T10:26:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 52<br>Th\u1eddi gian: 2026-04-24T10:26:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6533454, 10.7929415]}, "properties": {"time": "2026-04-24T10:26:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 53<br>Th\u1eddi gian: 2026-04-24T10:26:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6533154, 10.7928951]}, "properties": {"time": "2026-04-24T10:27:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 54<br>Th\u1eddi gian: 2026-04-24T10:27:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6532078, 10.7927004]}, "properties": {"time": "2026-04-24T10:27:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 55<br>Th\u1eddi gian: 2026-04-24T10:27:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6531271, 10.7925598]}, "properties": {"time": "2026-04-24T10:28:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 56<br>Th\u1eddi gian: 2026-04-24T10:28:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6530406, 10.7924023]}, "properties": {"time": "2026-04-24T10:28:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 57<br>Th\u1eddi gian: 2026-04-24T10:28:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6526603, 10.7915915]}, "properties": {"time": "2026-04-24T10:29:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 58<br>Th\u1eddi gian: 2026-04-24T10:29:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6523726, 10.7902986]}, "properties": {"time": "2026-04-24T10:29:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 59<br>Th\u1eddi gian: 2026-04-24T10:29:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6523327, 10.7901446]}, "properties": {"time": "2026-04-24T10:30:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 60<br>Th\u1eddi gian: 2026-04-24T10:30:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.652459, 10.7900764]}, "properties": {"time": "2026-04-24T10:30:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 61<br>Th\u1eddi gian: 2026-04-24T10:30:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6525675, 10.7901741]}, "properties": {"time": "2026-04-24T10:31:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 62<br>Th\u1eddi gian: 2026-04-24T10:31:00"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6525413, 10.7902768]}, "properties": {"time": "2026-04-24T10:31:30", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 63<br>Th\u1eddi gian: 2026-04-24T10:31:30"}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [106.6532608, 10.7925362]}, "properties": {"time": "2026-04-24T10:32:00", "style": {"color": "red"}, "icon": "marker", "iconstyle": {"iconSize": [20, 20], "className": "fa fa-car"}, "popup": "Tr\u1ea1ng th\u00e1i: \u0110ang di chuy\u1ec3n<br>B\u01b0\u1edbc: 64<br>Th\u1eddi gian: 2026-04-24T10:32:00"}}]}, {
+                    pointToLayer: function (feature, latLng) {
+                        if (feature.properties.icon == 'marker') {
+                            if(feature.properties.iconstyle){
+                                return new L.Marker(latLng, {
+                                    icon: L.icon(feature.properties.iconstyle)});
+                            }
+                            //else
+                            return new L.Marker(latLng);
+                        }
+                        if (feature.properties.icon == 'circle') {
+                            if (feature.properties.iconstyle) {
+                                return new L.circleMarker(latLng, feature.properties.iconstyle)
+                                };
+                            //else
+                            return new L.circleMarker(latLng);
+                        }
+                        //else
+
+                        return new L.Marker(latLng);
+                    },
+                    style: function (feature) {
+                        return feature.properties.style;
+                    },
+                    onEachFeature: function(feature, layer) {
+                        if (feature.properties.popup) {
+                        layer.bindPopup(feature.properties.popup);
+                        }
+                        if (feature.properties.tooltip) {
+                        layer.bindTooltip(feature.properties.tooltip);
+                        }
+                    }
+                })
+
+            var timestamped_geo_json_0e11b3db2c1eeaadd424529df64dd5e4 = L.timeDimension.layer.geoJson(
+                geoJsonLayer,
+                {
+                    updateTimeDimension: true,
+                    addlastPoint: true,
+                    duration: undefined,
+                }
+            ).addTo(map_e090c0fc365ab6f3397a90bc8901ebb8);
+        
+</script>
+</html>
